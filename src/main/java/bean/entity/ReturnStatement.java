@@ -4,10 +4,11 @@ package bean.entity;
  * Created by dmirry on 05.03.17.
  */
 public class ReturnStatement {
-    int idReturn;
-    int idUser;
+    int idReturnStatement;
+    int status;
     int idBook;
     int idClaim;
+    int idStatusDescription;
 
     @Override
     public boolean equals(Object o) {
@@ -16,35 +17,42 @@ public class ReturnStatement {
 
         ReturnStatement that = (ReturnStatement) o;
 
-        if (idReturn != that.idReturn) return false;
-        if (idUser != that.idUser) return false;
+        if (idReturnStatement != that.idReturnStatement) return false;
         if (idBook != that.idBook) return false;
         return idClaim == that.idClaim;
     }
 
     @Override
     public int hashCode() {
-        int result = idReturn;
-        result = 31 * result + idUser;
+        int result = idReturnStatement;
+
         result = 31 * result + idBook;
         result = 31 * result + idClaim;
         return result;
     }
 
-    public int getIdReturn() {
-        return idReturn;
+    public int getIdReturnStatement() {
+        return idReturnStatement;
     }
 
-    public void setIdReturn(int idReturn) {
-        this.idReturn = idReturn;
+    public void setIdReturnStatement(int idReturnStatement) {
+        this.idReturnStatement = idReturnStatement;
     }
 
-    public int getIdUser() {
-        return idUser;
+    public int getStatus() {
+        return status;
     }
 
-    public void setIdUser(int idUser) {
-        this.idUser = idUser;
+    public void setStatus(int status) {
+        this.status = status;
+    }
+
+    public int getIdStatusDescription() {
+        return idStatusDescription;
+    }
+
+    public void setIdStatusDescription(int idStatusDescription) {
+        this.idStatusDescription = idStatusDescription;
     }
 
     public int getIdBook() {
@@ -61,5 +69,16 @@ public class ReturnStatement {
 
     public void setIdClaim(int idClaim) {
         this.idClaim = idClaim;
+    }
+
+    @Override
+    public String toString() {
+        return "ReturnStatement{" +
+                "idReturnStatement=" + idReturnStatement +
+                ", status=" + status +
+                ", idBook=" + idBook +
+                ", idClaim=" + idClaim +
+                ", idStatusDescription=" + idStatusDescription +
+                '}';
     }
 }

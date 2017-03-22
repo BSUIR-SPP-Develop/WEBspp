@@ -12,7 +12,7 @@ public class Book {
     String language;
     int idAuthor;
     String publisher;
-    Date YearOfPublishing; //был Date, TODO
+    Date yearOfPublishing; //был Date, TODO
 
     @Override
     public boolean equals(Object o) {
@@ -27,7 +27,7 @@ public class Book {
         if (description != null ? !description.equals(book.description) : book.description != null) return false;
         if (language != null ? !language.equals(book.language) : book.language != null) return false;
         if (publisher != null ? !publisher.equals(book.publisher) : book.publisher != null) return false;
-        return YearOfPublishing != null ? YearOfPublishing.equals(book.YearOfPublishing) : book.YearOfPublishing == null;
+        return yearOfPublishing != null ? yearOfPublishing.equals(book.yearOfPublishing) : book.yearOfPublishing == null;
     }
 
     @Override
@@ -38,7 +38,7 @@ public class Book {
         result = 31 * result + (language != null ? language.hashCode() : 0);
         result = 31 * result + idAuthor;
         result = 31 * result + (publisher != null ? publisher.hashCode() : 0);
-        result = 31 * result + (YearOfPublishing != null ? YearOfPublishing.hashCode() : 0);
+        result = 31 * result + (yearOfPublishing != null ? yearOfPublishing.hashCode() : 0);
         return result;
     }
 
@@ -91,12 +91,23 @@ public class Book {
     }
 
     public Date getYearOfPublishing() {
-        return YearOfPublishing;
+        return yearOfPublishing;
     }
 
     public void setYearOfPublishing(Date yearOfPublishing) {
-        YearOfPublishing = yearOfPublishing;
+        yearOfPublishing = yearOfPublishing;
     }
 
-
+    @Override
+    public String toString() {
+        return "Book{" +
+                "idBook=" + idBook +
+                ", description='" + description + '\'' +
+                ", countOfPages=" + countOfPages +
+                ", language='" + language + '\'' +
+                ", idAuthor=" + idAuthor +
+                ", publisher='" + publisher + '\'' +
+                ", yearOfPublishing=" + yearOfPublishing +
+                '}';
+    }
 }

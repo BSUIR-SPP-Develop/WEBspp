@@ -11,6 +11,7 @@ public class News {
     String description;
     Date date;
     int idUser;
+    int idPerson;
 
     @Override
     public String toString() {
@@ -46,6 +47,10 @@ public class News {
         result = 31 * result + idUser;
         return result;
     }
+
+    public int getIdPerson() {return idPerson;}
+
+    public void setIdPerson(int idPerson) {this.idPerson = idPerson;}
 
     public int getIdNews() {
         return idNews;

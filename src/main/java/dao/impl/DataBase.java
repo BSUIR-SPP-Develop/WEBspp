@@ -43,7 +43,7 @@ public class DataBase implements IDataBase {
             resultSet = statement.executeQuery(SQL_SELECT_AUTHORS);
             temp.add(ResultHandler.authorElements(resultSet));
 
-            /*resultSet = statement.executeQuery(SQL_SELECT_BOOKS);
+            resultSet = statement.executeQuery(SQL_SELECT_BOOKS);
             temp.add(ResultHandler.bookElements(resultSet));
 
             resultSet = statement.executeQuery(SQL_SELECT_COMMENTS);
@@ -65,7 +65,7 @@ public class DataBase implements IDataBase {
             temp.add(ResultHandler.statucDiscriptionElements(resultSet));
 
             resultSet = statement.executeQuery(SQL_SELECT_USER);
-            temp.add(ResultHandler.userElements(resultSet));*/
+            temp.add(ResultHandler.userElements(resultSet));
 
             result = ResultHandler.getResult(temp);
         } catch(SQLException exception) {

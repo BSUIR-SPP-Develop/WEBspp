@@ -6,33 +6,16 @@ import java.util.Date;
  * Created by dmirry on 05.03.17.
  */
 public class StatusDescription {
+    int idStatusDescription;
     String markOfContidion;
-    int idStatement;
     Date dateOfEvalution;
-    int idBook;
 
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        StatusDescription that = (StatusDescription) o;
-
-        if (idStatement != that.idStatement) return false;
-        if (idBook != that.idBook) return false;
-        if (markOfContidion != null ? !markOfContidion.equals(that.markOfContidion) : that.markOfContidion != null)
-            return false;
-        return dateOfEvalution != null ? dateOfEvalution.equals(that.dateOfEvalution) : that.dateOfEvalution == null;
+    public int getIdStatusDescription() {
+        return idStatusDescription;
     }
 
-    @Override
-    public int hashCode() {
-        int result = markOfContidion != null ? markOfContidion.hashCode() : 0;
-        result = 31 * result + idStatement;
-        result = 31 * result + (dateOfEvalution != null ? dateOfEvalution.hashCode() : 0);
-        result = 31 * result + idBook;
-        return result;
+    public void setIdStatusDescription(int idStatusDescription) {
+        this.idStatusDescription = idStatusDescription;
     }
 
     public String getMarkOfContidion() {
@@ -43,27 +26,42 @@ public class StatusDescription {
         this.markOfContidion = markOfContidion;
     }
 
-    public int getIdStatement() {
-        return idStatement;
-    }
-
-    public void setIdStatement(int idStatement) {
-        this.idStatement = idStatement;
-    }
-
-    public Date getDataTime() {
+    public Date getDateOfEvalution() {
         return dateOfEvalution;
     }
 
-    public void setDataTime(Date dataTime) {
-        this.dateOfEvalution = dataTime;
+    public void setDateOfEvalution(Date dateOfEvalution) {
+        this.dateOfEvalution = dateOfEvalution;
     }
 
-    public int getIdBook() {
-        return idBook;
+    @Override
+    public String toString() {
+        return "StatusDescription{" +
+                "idStatusDescription=" + idStatusDescription +
+                ", markOfContidion='" + markOfContidion + '\'' +
+                ", dateOfEvalution=" + dateOfEvalution +
+                '}';
     }
 
-    public void setIdBook(int idBook) {
-        this.idBook = idBook;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        StatusDescription that = (StatusDescription) o;
+
+        if (idStatusDescription != that.idStatusDescription) return false;
+        if (markOfContidion != null ? !markOfContidion.equals(that.markOfContidion) : that.markOfContidion != null)
+            return false;
+        return dateOfEvalution != null ? dateOfEvalution.equals(that.dateOfEvalution) : that.dateOfEvalution == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = idStatusDescription;
+        result = 31 * result + (markOfContidion != null ? markOfContidion.hashCode() : 0);
+        result = 31 * result + (dateOfEvalution != null ? dateOfEvalution.hashCode() : 0);
+        return result;
     }
 }
+

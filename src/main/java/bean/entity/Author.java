@@ -49,3 +49,4 @@ public class Author {
         this.fullName = fullName;
     }
 }
+//hashcode vezde perepisat esli nado bydet

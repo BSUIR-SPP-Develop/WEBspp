@@ -8,33 +8,8 @@ public class Claim {
     int idUser;
     int idBook;
     int idPerson;
+    int bookStatusDescription;
 
-    public int getIdPerson() {
-        return idPerson;
-    }
-
-    public void setIdPerson(int idPerson) {
-        this.idPerson = idPerson;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Claim claim = (Claim) o;
-        if (idClaim != claim.idClaim) return false;
-        if (idUser != claim.idUser) return false;
-        return idBook == claim.idBook;
-    }
-
-    @Override
-    public int hashCode() {
-        int result = idClaim;
-        result = 31 * result + idUser;
-        result = 31 * result + idBook;
-        return result;
-    }
 
     public int getIdClaim() {
         return idClaim;
@@ -58,5 +33,56 @@ public class Claim {
 
     public void setIdBook(int idBook) {
         this.idBook = idBook;
+    }
+
+    public int getIdPerson() {
+        return idPerson;
+    }
+
+    public void setIdPerson(int idPerson) {
+        this.idPerson = idPerson;
+    }
+
+    public int getBookStatusDescription() {
+        return bookStatusDescription;
+    }
+
+    public void setBookStatusDescription(int bookStatusDescription) {
+        this.bookStatusDescription = bookStatusDescription;
+    }
+
+    @Override
+    public String toString() {
+        return "Claim{" +
+                "idClaim=" + idClaim +
+                ", idUser=" + idUser +
+                ", idBook=" + idBook +
+                ", idPerson=" + idPerson +
+                ", bookStatusDescription=" + bookStatusDescription +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Claim claim = (Claim) o;
+
+        if (idClaim != claim.idClaim) return false;
+        if (idUser != claim.idUser) return false;
+        if (idBook != claim.idBook) return false;
+        if (idPerson != claim.idPerson) return false;
+        return bookStatusDescription == claim.bookStatusDescription;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = idClaim;
+        result = 31 * result + idUser;
+        result = 31 * result + idBook;
+        result = 31 * result + idPerson;
+        result = 31 * result + bookStatusDescription;
+        return result;
     }
 }

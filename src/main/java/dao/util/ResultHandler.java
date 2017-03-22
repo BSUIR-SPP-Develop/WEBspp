@@ -34,20 +34,20 @@ public class ResultHandler {
         }
 
         return temp;
-    }/*
+    }
 
     public static ArrayList bookElements(ResultSet resultSet) throws SQLException {
         ArrayList temp = new ArrayList();
 
         while (resultSet.next()) {
             Book book = new Book();
-            //book.setIdAuthor(resultSet.getInt("id_author"));
-            book.setCountOfPages(resultSet.getInt("CountOfPages"));
+            book.setIdAuthor(resultSet.getInt("id_author"));
+            book.setCountOfPages(resultSet.getInt("count_of_pages"));
             book.setDescription(resultSet.getString("description"));
-            book.setIdBook(resultSet.getInt("idBook"));
+            book.setIdBook(resultSet.getInt("id_book"));
             book.setLanguage(resultSet.getString("language"));
-            book.setPublisher(resultSet.getString("Publisher"));
-            book.setYearOfPublishing(resultSet.getDate("YearOfPublishing"));
+            book.setPublisher(resultSet.getString("publisher"));
+            book.setYearOfPublishing(resultSet.getDate("year_of_publishing"));
             temp.add(book);
         }
 
@@ -59,9 +59,11 @@ public class ResultHandler {
 
         while (resultSet.next()) {
             Claim claim = new Claim();
-            claim.setIdBook(resultSet.getInt("Book_idBook"));
-            claim.setIdClaim(resultSet.getInt("idClaim"));
-            claim.setIdUser(resultSet.getInt("User_idUser"));
+            claim.setIdClaim(resultSet.getInt("id_claim"));
+            claim.setIdBook(resultSet.getInt("id_book"));
+            claim.setIdUser(resultSet.getInt("id_user"));
+            claim.setIdPerson(resultSet.getInt("id_person"));
+            claim.setBookStatusDescription(resultSet.getInt("book_status_descrition"));
             temp.add(claim);
         }
 
@@ -73,10 +75,11 @@ public class ResultHandler {
 
         while (resultSet.next()) {
             Comment comment = new Comment();
+            comment.setIdComment(resultSet.getInt("id_comment"));
             comment.setIdBook(resultSet.getInt("id_book"));
-            comment.setIdUser(resultSet.getInt("user"));
+            comment.setIdUser(resultSet.getInt("id_user"));
             comment.setContent(resultSet.getString("content"));
-            comment.setIdComment(resultSet.getInt("comment"));
+            comment.setIdPerson(resultSet.getInt("id_person"));
             temp.add(comment);
         }
 
@@ -92,6 +95,7 @@ public class ResultHandler {
             news.setDescription(resultSet.getString("description"));
             news.setIdUser(resultSet.getInt("id_user"));
             news.setDate(resultSet.getDate("date"));
+            news.setIdPerson(resultSet.getInt("id_person"));
             news.setIdNews(resultSet.getInt("id_news"));
             temp.add(news);
         }
@@ -119,10 +123,12 @@ public class ResultHandler {
 
         while (resultSet.next()) {
             ReturnStatement returnStatement = new ReturnStatement();
-            returnStatement.setIdUser(resultSet.getInt("id_user"));
+            returnStatement.setIdReturnStatement(resultSet.getInt("id_return_statement"));
+            returnStatement.setStatus(resultSet.getInt("status"));
+            returnStatement.setIdStatusDescription(resultSet.getInt("id_status_description"));
             returnStatement.setIdBook(resultSet.getInt("id_book"));
             returnStatement.setIdClaim(resultSet.getInt("id_claim"));
-            returnStatement.setIdReturn(resultSet.getInt("id_return"));
+
             temp.add(returnStatement);
         }
 
@@ -134,9 +140,8 @@ public class ResultHandler {
 
         while (resultSet.next()) {
             StatusDescription statusDescription = new StatusDescription();
-            statusDescription.setIdBook(resultSet.getInt("id_book"));
-            statusDescription.setDataTime(resultSet.getDate("date_time"));
-            statusDescription.setIdStatement(resultSet.getInt("id_statement"));
+            statusDescription.setIdStatusDescription(resultSet.getInt("id_status_description"));
+            statusDescription.setDateOfEvalution(resultSet.getDate("date_of_evalution"));
             statusDescription.setMarkOfContidion(resultSet.getString("mark_of_condition"));
             temp.add(statusDescription);
         }
@@ -150,7 +155,6 @@ public class ResultHandler {
         while (resultSet.next()) {
             User user = new User();
             user.setIdPerson(resultSet.getInt("id_person"));
-            user.setIdClaim(resultSet.getInt("id_claim"));
             user.setEmail(resultSet.getString("email"));
             user.setIdUser(resultSet.getInt("id_user"));
             user.setLogin(resultSet.getString("login"));
@@ -160,5 +164,5 @@ public class ResultHandler {
         }
 
         return temp;
-    }*/
+    }
 }

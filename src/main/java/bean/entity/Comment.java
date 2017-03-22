@@ -8,6 +8,9 @@ public class Comment {
     String content;
     int idUser;
     int idBook;
+    int idPerson;
+
+
 
     @Override
     public boolean equals(Object o) {
@@ -30,6 +33,9 @@ public class Comment {
         result = 31 * result + idBook;
         return result;
     }
+    public int getIdPerson() {return idPerson;}
+
+    public void setIdPerson(int idPerson) {this.idPerson = idPerson;}
 
     public int getIdComment() {
         return idComment;
@@ -61,5 +67,16 @@ public class Comment {
 
     public void setIdBook(int idBook) {
         this.idBook = idBook;
+    }
+
+    @Override
+    public String toString() {
+        return "Comment{" +
+                "idComment=" + idComment +
+                ", content='" + content + '\'' +
+                ", idUser=" + idUser +
+                ", idBook=" + idBook +
+                ", idPerson=" + idPerson +
+                '}';
     }
 }

@@ -10,7 +10,7 @@ public class User {
     String password;
     String role;
     int idPerson;
-    int idClaim;
+
 
     @Override
     public String toString() {
@@ -21,7 +21,6 @@ public class User {
                 ", password='" + password + '\'' +
                 ", role='" + role + '\'' +
                 ", idPerson=" + idPerson +
-                ", idClaim=" + idClaim +
                 '}';
     }
 
@@ -34,7 +33,7 @@ public class User {
 
         if (idUser != user.idUser) return false;
         if (idPerson != user.idPerson) return false;
-        if (idClaim != user.idClaim) return false;
+
         if (email != null ? !email.equals(user.email) : user.email != null) return false;
         if (login != null ? !login.equals(user.login) : user.login != null) return false;
         if (password != null ? !password.equals(user.password) : user.password != null) return false;
@@ -49,7 +48,7 @@ public class User {
         result = 31 * result + (password != null ? password.hashCode() : 0);
         result = 31 * result + (role != null ? role.hashCode() : 0);
         result = 31 * result + idPerson;
-        result = 31 * result + idClaim;
+
         return result;
     }
 
@@ -101,11 +100,4 @@ public class User {
         this.idPerson = idPerson;
     }
 
-    public int getIdClaim() {
-        return idClaim;
-    }
-
-    public void setIdClaim(int idClaim) {
-        this.idClaim = idClaim;
-    }
 }

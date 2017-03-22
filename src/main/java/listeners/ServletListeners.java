@@ -13,14 +13,14 @@ import javax.servlet.ServletContextListener;
 public class ServletListeners implements ServletContextListener {
 
     public void contextInitialized(ServletContextEvent servletContextEvent) {
-       /* try {
+        try {
             ServiceFactory serviceFactory = ServiceFactory.getInstance();
             Service service = serviceFactory.getService();
             service.init();
         } catch (ServiceException exception) {
             exception.printStackTrace();
             throw new RuntimeException();
-        }*/
+        }
     }
 
     public void contextDestroyed(ServletContextEvent servletContextEvent) {
